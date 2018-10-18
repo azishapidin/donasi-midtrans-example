@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "66ca7343889332c2b8ecca11c251430c",
+    "content-hash": "cf9bd668d6d9e0b7012fc515d5b6f833",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2308,6 +2308,55 @@
             "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
             "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
             "time": "2017-11-27T11:13:29+00:00"
+        },
+        {
+            "name": "veritrans/veritrans-php",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/veritrans/veritrans-php.git",
+                "reference": "8bb9291ab6275c362feda38b7fb683627c4e0201"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/veritrans/veritrans-php/zipball/8bb9291ab6275c362feda38b7fb683627c4e0201",
+                "reference": "8bb9291ab6275c362feda38b7fb683627c4e0201",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "5.7.*",
+                "psy/psysh": "0.4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    ""
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Andri Setiawan",
+                    "email": "andri.setiawan@veritrans.co.id"
+                },
+                {
+                    "name": "Alvin Litani",
+                    "email": "alvin.litani@veritrans.co.id"
+                },
+                {
+                    "name": "Ismail Faruqi",
+                    "email": "ismail.faruqi@veritrans.co.id"
+                }
+            ],
+            "description": "PHP Wraper for Veritrans VT-Web Payment API.",
+            "homepage": "https://midtrans.com",
+            "time": "2018-04-26T10:03:43+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
