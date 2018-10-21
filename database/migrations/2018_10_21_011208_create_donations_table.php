@@ -19,6 +19,7 @@ class CreateDonationsTable extends Migration
             $table->string('donation_type')->nullable();
             $table->decimal('amount', 20, 2)->default(0);
             $table->string('note')->nullable();
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }
