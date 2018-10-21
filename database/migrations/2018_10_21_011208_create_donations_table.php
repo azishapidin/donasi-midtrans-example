@@ -20,6 +20,7 @@ class CreateDonationsTable extends Migration
             $table->decimal('amount', 20, 2)->default(0);
             $table->string('note')->nullable();
             $table->string('status')->default('pending');
+            $table->string('snap_token')->nullable();
             $table->timestamps();
         });
     }
