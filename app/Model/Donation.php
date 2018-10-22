@@ -13,6 +13,7 @@ class Donation extends Model
      */
     protected $fillable = [
         'donor_name',
+        'donor_email',
         'donation_type',
         'amount',
         'note',

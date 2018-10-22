@@ -14,3 +14,5 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/donation/store', 'DonationController@submitDonation')->name('donation.store');

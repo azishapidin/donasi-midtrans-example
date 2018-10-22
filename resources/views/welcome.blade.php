@@ -57,7 +57,7 @@
             <legend>Donation</legend>
 
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
 
                     <!-- Text input-->
                     <div class="form-group">
@@ -70,7 +70,22 @@
                     </div>
 
                 </div>
-                <div class="col-md-6">
+
+                <div class="col-md-4">
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="control-label" for="donor_email">Donor Email</label>
+                        <div>
+                            <input id="donor_email" name="donor_email" type="text" placeholder="Enter your email.." class="form-control input-md"
+                                required="">
+    
+                        </div>
+                    </div>
+    
+                </div>
+
+                <div class="col-md-4">
 
                     <!-- Select Basic -->
                     <div class="form-group">
@@ -96,7 +111,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Rp</span>
                         </div>
-                        <input id="amount" name="amount" class="form-control" placeholder="" type="number" required="">
+                        <input id="amount" name="amount" class="form-control" placeholder="" type="number" min="10000" required="">
                     </div>
 
                 </div>
@@ -122,10 +137,36 @@
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+    <!-- TODO: Hapus ".sandbox" dari script src URL jika sudah di production -->
+    <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('services.midtrans.clientKey') }}"></script>
     <script>
     function submitForm() {
-        alert('submitted');
-
+        $.post("{{ route('donation.store') }}",
+        {
+            _method: 'POST',
+            _token: '{{ csrf_token() }}',
+            amount: $('input#amount').val(),
+            note: $('textarea#note').val(),
+            donation_type: $('select#donation_type').val(),
+            donor_name: $('input#donor_name').val(),
+            donor_email: $('input#donor_email').val(),
+        },
+        function (data, status) {
+            snap.pay(data.snap_token, {
+                // Optional
+                onSuccess: function (result) {
+                    location.reload();
+                },
+                // Optional
+                onPending: function (result) {
+                    location.reload();
+                },
+                // Optional
+                onError: function (result) {
+                    location.reload();
+                }
+            });
+        });
         return false;
     }
     </script>
