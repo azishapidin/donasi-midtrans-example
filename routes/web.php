@@ -13,3 +13,4 @@
 
 Route::get('/', 'DonationController@index');
 Route::post('/donation/store', 'DonationController@submitDonation')->name('donation.store');
+Route::post('/notification/handler', 'DonationController@notificationHandler')->name('notification.handler');
