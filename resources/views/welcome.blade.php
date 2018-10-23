@@ -134,7 +134,7 @@
 
         <br>
 
-        <table class="table table-striped">
+        <table class="table table-striped" id="list">
             <tr>
                 <th>ID</th>
                 <th>Donor Name</th>
