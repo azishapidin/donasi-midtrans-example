@@ -11,8 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', 'DonationController@index');
 Route::post('/donation/store', 'DonationController@submitDonation')->name('donation.store');

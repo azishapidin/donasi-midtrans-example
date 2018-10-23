@@ -35,6 +35,18 @@ class DonationController extends Controller
     }
 
     /**
+     * Show index page.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function index()
+    {
+        $data['donations'] = Donation::orderBy('id', 'desc')->paginate(10);
+
+        return view('welcome', $data);
+    }
+
+    /**
      * Submit donation.
      *
      * @return array

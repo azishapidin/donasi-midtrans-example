@@ -132,6 +132,33 @@
 
         </form>
 
+        <br>
+
+        <table class="table table-stripped">
+            <tr>
+                <th>ID</th>
+                <th>Donor Name</th>
+                <th>Amount</th>
+                <th>Donation Type</th>
+                <th>Status</th>
+                <th>Pay</th>
+            </tr>
+            @foreach ($donations as $donation)
+            <tr>
+                <td>{{ $donation->id }}</td>
+                <td>{{ $donation->donor_name }}</td>
+                <td>Rp. {{ number_format($donation->amount) }},-</td>
+                <td>{{ ucwords(str_replace('_', ' ', $donation->donation_type)) }}</td>
+                <td>{{ ucfirst($donation->status) }}</td>
+                <td>
+                    @if ($donation->status == 'pending')
+                    <button class="btn btn-success btn-sm" onclick="snap.pay('{{ $donation->snap_token }}')">Complete Payment</button>
+                    @endif
+                </td>
+            </tr>
+            @endforeach
+        </table>
+
     </div>
     <script
         src="https://code.jquery.com/jquery-3.3.1.min.js"
