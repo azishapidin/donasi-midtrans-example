@@ -18,4 +18,34 @@ class Donation extends Model
         'amount',
         'note',
     ];
+
+    /**
+     * Set status to Pending
+     *
+     * @return void
+     */
+    public function setPending()
+    {
+        # code...
+    }
+
+    /**
+     * Set status to Success
+     *
+     * @return void
+     */
+    public function setSuccess()
+    {
+        # code...
+    }
+
+    /**
+     * Set status to Failed
+     *
+     * @return void
+     */
+    public function setFailed()
+    {
+        # code...
+    }
 }
