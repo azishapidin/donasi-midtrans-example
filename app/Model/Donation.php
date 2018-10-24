@@ -26,7 +26,8 @@ class Donation extends Model
      */
     public function setPending()
     {
-        # code...
+        $this->attributes['status'] = 'pending';
+        self::save();
     }
 
     /**
@@ -36,7 +37,8 @@ class Donation extends Model
      */
     public function setSuccess()
     {
-        # code...
+        $this->attributes['status'] = 'success';
+        self::save();
     }
 
     /**
@@ -46,6 +48,7 @@ class Donation extends Model
      */
     public function setFailed()
     {
-        # code...
+        $this->attributes['status'] = 'failed';
+        self::save();
     }
 }
