@@ -97,6 +97,22 @@ class DonationController extends Controller
     }
 
     /**
+     * Handle finish page after payment.
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function finish(Request $request)
+    {
+        $result = $request->input('result_data');
+        $result = json_decode($result);
+        echo $result->status_message . '<br>';
+        echo 'RESULT <br><pre>';
+        var_dump($result);
+        echo '</pre>' ;
+    }
+
+    /**
      * Midtrans notification handler.
      *
      * @param Request $request
