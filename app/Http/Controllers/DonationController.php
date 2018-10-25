@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Model\Donation;
 use Veritrans_Config;
 use Veritrans_Snap;
+use Veritrans_Notification;
 
 class DonationController extends Controller
 {
