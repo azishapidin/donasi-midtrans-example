@@ -51,4 +51,15 @@ class Donation extends Model
         $this->attributes['status'] = 'failed';
         self::save();
     }
+
+    /**
+     * Set status to Expired
+     *
+     * @return void
+     */
+    public function setExpired()
+    {
+        $this->attributes['status'] = 'expired';
+        self::save();
+    }
 }
