@@ -111,7 +111,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Rp</span>
                         </div>
-                        <input id="amount" name="amount" class="form-control" placeholder="" type="number" min="10000" required="">
+                        <input id="amount" name="amount" class="form-control" placeholder="" type="number" min="10000" max="999999999" required="">
                     </div>
 
                 </div>
