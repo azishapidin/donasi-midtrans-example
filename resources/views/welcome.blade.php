@@ -181,20 +181,24 @@
             donor_email: $('input#donor_email').val(),
         },
         function (data, status) {
-            snap.pay(data.snap_token, {
-                // Optional
-                onSuccess: function (result) {
-                    location.reload();
-                },
-                // Optional
-                onPending: function (result) {
-                    location.reload();
-                },
-                // Optional
-                onError: function (result) {
-                    location.reload();
-                }
-            });
+            if (data.status == 'error') {
+                alert(data.message);
+            } else {
+                snap.pay(data.snap_token, {
+                    // Optional
+                    onSuccess: function (result) {
+                        location.reload();
+                    },
+                    // Optional
+                    onPending: function (result) {
+                        location.reload();
+                    },
+                    // Optional
+                    onError: function (result) {
+                        location.reload();
+                    }
+                });
+            }
         });
         return false;
     }

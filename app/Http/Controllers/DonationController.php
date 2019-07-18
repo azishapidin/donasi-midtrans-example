@@ -54,6 +54,19 @@ class DonationController extends Controller
      */
     public function submitDonation()
     {
+        $validator = \Validator::make(request()->all(), [
+            'donor_name'  => 'required',
+            'donor_email' => 'required|email',
+            'amount'      => 'required|numeric'
+        ]);
+
+        if ($validator->fails()) {
+            return [
+              'status'  => 'error',
+              'message' => $validator->errors()->first()
+            ];
+        }
+
         \DB::transaction(function(){
             // Save donasi ke database
             $donation = Donation::create([
